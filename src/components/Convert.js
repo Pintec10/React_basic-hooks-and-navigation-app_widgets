@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { TRANSLATE_API_KEY, TRANSLATE_BASE_URL } from '../config';
+// Note: config.js file is not uploaded to GitHub
+
 
 
 const Convert = ({ language, text }) => {
 
+	// the stored debounced input text is changed 500ms after the actual input changed, to avoid excessive API calls
 	const [debouncedText, setDebouncedText] = useState(text);
 
 	useEffect(() => {
@@ -16,6 +19,7 @@ const Convert = ({ language, text }) => {
 	}, [text]);
 
 
+	// API call is made when stored debounced input text changes
 	const [translation, setTranslation] = useState('');
 
 	useEffect(() => { 
@@ -43,6 +47,7 @@ const Convert = ({ language, text }) => {
 		</div>
 	);
 };
+
 
 
 export default Convert;
