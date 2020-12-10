@@ -53,13 +53,14 @@ const Translate = () => {
 				<input type="text" value={inputText} onChange={handleTextChange}></input>
 				</div>
 			</div>
+			<div className="ui hidden divider" />
 			<Dropdown options={options} 
 			selectedOption={selectedLanguage} 
 			handleSelection={setSelectedLanguage}
 			label={dropdownLabel}/>
-			<br />
-			<hr />
-			<br />
+			<div className="ui hidden divider" />
+			<div className="ui divider" />
+			<div className="ui hidden divider" />
 			<Convert language={selectedLanguage} text={inputText}/>
 			
 		</div>
