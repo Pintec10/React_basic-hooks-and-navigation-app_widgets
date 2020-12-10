@@ -47,6 +47,8 @@ const Translate = () => {
 
 	return(
 		<div>
+			<p style={{color: 'firebrick'}}>Please note: this component will not work in Netlify or when otherwise deployed on the web. 
+			This is due to a restriction in the API key used.</p>
 			<div className="ui form">
 				<div className="field">
 				<label className="label">Please enter the text you want to translate</label>

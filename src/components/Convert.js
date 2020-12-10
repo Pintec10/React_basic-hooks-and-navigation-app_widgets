@@ -19,7 +19,7 @@ const Convert = ({ language, text }) => {
 	}, [text]);
 
 
-	// API call is made when stored debounced input text changes
+	// API call is made when stored debounced input text changes - NOTE: The google translate API key is the config.js file, which is not uploaded to GitHub.
 	const [translation, setTranslation] = useState('');
 
 	useEffect(() => { 
