@@ -4,7 +4,8 @@ import Accordion from './components/Accordion';
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
 import Translate from './components/Translate';
-
+import Route from './components/Route';
+import Header from './components/Header';
 
 const items = [
 	{
@@ -47,16 +48,26 @@ const App = () => {
 
 	const [selectedOption, setSelectedOption] = useState(options[0]);
 	return (
-		<div>
-			{/* <Accordion items={items}/> */}
-			{/* <Search /> */}
-			{/* <Dropdown
-				options={options}
-				selectedOption={selectedOption}
-				handleSelection={setSelectedOption}
-				label={dropdownLabel} />
-			<h3 style={{color: selectedOption.value}}>{faker.lorem.sentences()}</h3> */}
-			<Translate />
+		<div className="ui container">
+			<Header />
+			
+			<Route path='/'>
+				<Accordion items={items} />
+			</Route>
+			<Route path='/search'>
+				<Search />
+			</Route>
+			<Route path='/dropdown'>
+				<Dropdown
+					options={options}
+					selectedOption={selectedOption}
+					handleSelection={setSelectedOption}
+					label={dropdownLabel} />
+				<h3 style={{ color: selectedOption.value }}>{faker.lorem.sentences()}</h3>
+			</Route>
+			<Route path='/translate'>
+				<Translate />
+			</Route>
 		</div>
 	);
 }

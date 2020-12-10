@@ -57,7 +57,9 @@ const Translate = () => {
 			selectedOption={selectedLanguage} 
 			handleSelection={setSelectedLanguage}
 			label={dropdownLabel}/>
+			<br />
 			<hr />
+			<br />
 			<Convert language={selectedLanguage} text={inputText}/>
 			
 		</div>
